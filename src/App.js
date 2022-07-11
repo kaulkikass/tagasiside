@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import { Route, Routes, Link } from 'react-router-dom';
 import './App.css';
+import Tagasiside from './Pages/Tagasiside';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Link to='/'>
+      <button>Avalehele</button>
+      </Link>
+      <Link to='/tagasiside'>
+      <button>Tagasisidede lehele</button>
+      </Link>
+      <Routes>
+        <Route path='/' exact element={<div>Tere</div>} />
+        <Route path='/tagasiside' exact element={ <Tagasiside /> } />
+      </Routes>
     </div>
   );
 }
